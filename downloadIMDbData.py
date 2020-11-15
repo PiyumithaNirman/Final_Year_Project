@@ -121,7 +121,7 @@ for x in real_movie_data:
     movie = ia.get_movie(movie.movieID)
     dic = movie['directors'][0]['name']
     print(x + " " + dataset['director_name'][count] + " " + dic)
-    if (dic == dataset['director_name'][count]):
+    if dic == dataset['director_name'][count]:
         movie_list.append(x)
     count = count + 1
 
