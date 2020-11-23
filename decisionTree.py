@@ -7,10 +7,10 @@ from sklearn import metrics  # Import scikit-learn metrics module for accuracy c
 # load dataset
 
 # split dataset in features and target variable
-df = pd.read_csv('Label_Set_Finance - Sheet1.csv')
+df = pd.read_csv('Final IMDb Lebel set - Sheet12332.csv')
 
-X = df.drop('Finance_Label', axis=1)  # Features
-y = df['Finance_Label']  # Target variable
+X = df.drop('IMDb_Label', axis=1)  # Features
+y = df['IMDb_Label']  # Target variable
 
 # Split dataset into training set and test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)  # 70% training and 30% test

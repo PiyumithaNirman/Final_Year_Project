@@ -43,7 +43,8 @@ Movie_music_awords = []
 Movie_cinematography_aword = []
 Movie_costume_aword = []
 count = 0
-movie_list = ['Batman v Superman: Dawn of Justice']
+
+movie_list = ['Spider-Man 3']
 
 
 def get_person_aword(person_name):
@@ -106,12 +107,13 @@ def getmovieactor(movieId):
     actor_3_credit = 0
     music_credit = 0
     cinematography_credit = 0
-    url = "https://www.imdb.com/title/tt{movieId}/fullcredits/?ref_=tt_ov_st_sm"
-    page = get(url)
+    # url = "https://www.imdb.com/title/tt{movieId}/fullcredits"
+    page = get("https://www.imdb.com/title/tt{movieId}/fullcredits")
     soup = BeautifulSoup(page.content, 'lxml')
     pattern = []
     # cast
     cast = soup.find_all('table', {'class': 'cast_list'})
+    print(cast)
     allcast1 = cast[0].findAll('td', {'class': 'character'})
     allcast2 = cast[0].findAll('td', {'class': 'ellipsis'})
     allcast3 = cast[0].findAll('td', {'class': 'primary_photo'})
@@ -237,3 +239,22 @@ df = pd.DataFrame(data,
                            'Movie_writter_names', 'Movie_writter_credit', 'Movie_writter_awords',
                            'Movie_cinematography_name', 'Movie_cinematography_credit', 'Movie_cinematography_aword',
                            'Movie_costume_name', 'Movie_costume_credit', ])
+
+df.to_csv(index=False, path_or_buf='./output7.csv')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

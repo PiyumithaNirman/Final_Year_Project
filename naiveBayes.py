@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 
 
-df = pd.read_csv('Label_Set_IMDb - Sheet1.csv')
+df = pd.read_csv('Final IMDb Lebel set - Sheet12332.csv')
 
 x = df.drop('IMDb_Label', axis=1)
 y = df['IMDb_Label']

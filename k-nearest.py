@@ -4,7 +4,7 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
-data = pd.read_csv('Label_Set_IMDb - Sheet1.csv')
+data = pd.read_csv('Final IMDb Lebel set - Sheet12332.csv')
 
 # shape of dataset
 print("Shape:", data.shape)
