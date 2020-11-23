@@ -11,6 +11,7 @@ format_df = df['Movie_ratings']
 
 print format_df
 
+
 def label_race(format_df):
     for x in format_df:
 

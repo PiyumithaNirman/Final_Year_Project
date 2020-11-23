@@ -16,6 +16,26 @@ df['Budget'] = df['Budget'].replace('[\$,]', '', regex=True).astype(float)
 Content_Ratio = LabelEncoder()
 df['Content_Ratio'] = Content_Ratio.fit_transform(df['Content_Ratio'])
 
+
+def label_race(x):
+    if x <= 5:
+        return 'CLASS-1'
+    if 5 < x <= 6.5:
+        return 'CLASS-2'
+    if 6.5 < x <= 7.5:
+        return 'CLASS-3'
+    if 7.5 < x <= 10:
+        return 'CLASS-4'
+
+
+count = 0
+movie_genres = df['Movie_ratings']
+for index in df.index:
+    Movie_ratings = df.loc[index, 'Movie_ratings']
+    print(Movie_ratings)
+    df.loc[index, "IMDb_Label"] = label_race(Movie_ratings)
+
 print (df)
 
 df.to_csv('new.csv')
+df.
