@@ -5,10 +5,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 
 
-df = pd.read_csv('Final IMDb Lebel set - Sheet12332.csv')
+df = pd.read_csv('Label_With_Finance_Rate - Sheet1.csv')
 
-x = df.drop('IMDb_Label', axis=1)
-y = df['IMDb_Label']
+x = df.drop('Finance_Label', axis=1)
+y = df['Finance_Label']
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=0)
 
@@ -20,5 +20,5 @@ GaussianNB(priors=None, var_smoothing=1e-09)
 y_pred = classifier.predict(x_test)
 print y_pred
 
-accuracy = accuracy_score(y_test, y_pred) * 100
+accuracy = accuracy_score(y_test, y_pred)
 print accuracy

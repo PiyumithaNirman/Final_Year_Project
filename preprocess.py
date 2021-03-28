@@ -1,15 +1,21 @@
 import pandas as pd
-import csv
 
 # READ THE DATA FILES
 from sklearn.preprocessing import LabelEncoder
 
-csv_file = open('Final IMDb Lebel set - Sheet1.csv')
+csv_file = open('Final IMDb Data.csv')
 df = pd.read_csv(csv_file)
 
-df['Movie_actor_1_credit'] = df['Movie_actor_1_credit'].fillna(
-    df.groupby('Aspect_Ratio')['Movie_actor_1_credit'].transform('mean'))
-df['Movie_actor_1_credit'] = df['Movie_actor_1_credit'].fillna(df['Movie_actor_1_credit'].mean())
+df = df.drop_duplicates()
+
+df['Screen_Count'] = df['Screen_Count'].fillna(
+    df.groupby('Movie_Title')['Screen_Count'].transform('mean'))
+df['Screen_Count'] = df['Screen_Count'].fillna(df['Screen_Count'].mean())
+df['Screen_Count'] = df['Screen_Count'].round()
+
+df['Aspect_Ratio'] = df['Aspect_Ratio'].fillna(
+    df.groupby('Movie_Title')['Aspect_Ratio'].transform('mean'))
+df['Aspect_Ratio'] = df['Aspect_Ratio'].fillna(df['Aspect_Ratio'].mean())
 
 df['Budget'] = df['Budget'].replace('[\$,]', '', regex=True).astype(float)
 
@@ -38,4 +44,3 @@ for index in df.index:
 print (df)
 
 df.to_csv('new.csv')
-df.

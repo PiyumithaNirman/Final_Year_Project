@@ -1,22 +1,28 @@
-from Tkinter import Image
-
 import pandas as pd
-from pandas.tests.sparse.frame.test_to_from_scipy import scipy
 
-df = pd.read_csv('new.csv')
-dft = pd.DataFrame(df, columns=['Movie_Title', 'Movie_years', 'Content_Ratio', 'Aspect_Ratio', 'Movie_actor_1_credit',
-                                'Actor_1_Oscar_Awards', 'Actor_1_Other_Awards', 'Movie_actor_2_credit',
-                                'Actor_2_Oscar_Awards', 'Actor_2_Other_Awards', 'Movie_actor_3_credit',
-                                'Actor_3_Oscar_Awards', 'Actor_3_Other_Awards', 'Movie_director_credit',
-                                'Director_Oscar_Awards', 'Director_Other_Awards', 'Movie_writter_credit',
-                                'Movie_Writter_Oscar_Awards', 'Music_Writter_Other_Awards', 'Movie_music_credit',
-                                'Music_Oscar_Awards', 'Music_Other_Awards', 'Movie_cinematography_credit',
-                                'Cinematograpy_Oscar_Awards', 'Cinematograpy_Other_Awards', 'Budget', 'Movie_ratings'
+df = pd.read_csv('Label_With_Finace_Rate.csv')
+dft = pd.DataFrame(df, columns=['Distributor', 'Theaters', 'Movie_Gross', 'Movie_years', 'Movie_budget',
+                                'Movie_aspect_ratio',
+                                'Movie_runtime', 'Movie_ratings', 'Movie_director',
+                                'Movie_director_credit', 'Movie_director_awords_Oscars', 'Movie_director_awords_win',
+                                'Movie_director_awords_nominations', 'Movie_actor_1_name', 'Movie_actor_1_credit',
+                                'Movie_actor_1_awords_Oscars', 'Movie_actor_1_awords_win', 'Movie_actor_1_awords_nominations',
+                                'Movie_actor_2_name', 'Movie_actor_2_credit', 'Movie_actor_2_awords_Oscars',
+                                'Movie_actor_2_awords_win', 'Movie_actor_2_awords_nominations', 'Movie_actor_3_name',
+                                'Movie_actor_3_credit', 'Movie_actor_3_awords_Oscars', 'Movie_actor_3_awords_win',
+                                'Movie_actor_3_awords_nominations', 'Movie_music_names',
+                                'Movie_music_credit', 'Movie_music_awords_Oscars', 'Movie_music_awords_win',
+                                'Movie_music_awords_nominations', 'Movie_writter_names', 'Movie_writter_credit',
+                                'Movie_writter_awords_Oscars', 'Movie_writter_awords_wins', 'Movie_writter_awords_nominations',
+                                'Movie_cinematography_name', 'Movie_cinematography_credit', 'Movie_cinematography_aword_Oscars',
+                                'Movie_cinematography_aword_win', 'Movie_cinematography_aword_nominations',
+                                'Movie_costume_name', 'Movie_costume_credit', 'Movie_costume_aword_Oscars',
+                                'Movie_costume_aword_win', 'Movie_costume_aword_nominations'
                                 ])
+
 
 print(dft.describe())
 corrMatrix = dft.corr() * 100
 print (corrMatrix)
 
 corrMatrix.to_csv('fsada.csv')
-scipy.misc.imsave('outfile.jpg', corrMatrix)
