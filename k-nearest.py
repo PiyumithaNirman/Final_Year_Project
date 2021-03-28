@@ -48,6 +48,7 @@ knn = KNeighborsClassifier(n_neighbors=3)
 # knn = SVC(kernel='rbf')
 # knn = GaussianNB()
 # knn = DecisionTreeClassifier()
+kk
 knn.fit(X_train, y_train)
 
 # making predictions on the testing set
