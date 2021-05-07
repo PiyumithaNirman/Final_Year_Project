@@ -1,7 +1,7 @@
 import pandas as pd
 
-df = pd.read_csv('Label_With_Finace_Rate.csv')
-dft = pd.DataFrame(df, columns=['Distributor', 'Theaters', 'Movie_Gross', 'Movie_years', 'Movie_budget',
+df = pd.read_csv('Label_With_IMDb_Rate - Sheet1.csv')
+dft = pd.DataFrame(df, columns=['Distributor', 'Theaters', 'Movie_years', 'Movie_budget',
                                 'Movie_aspect_ratio',
                                 'Movie_runtime', 'Movie_ratings', 'Movie_director',
                                 'Movie_director_credit', 'Movie_director_awords_Oscars', 'Movie_director_awords_win',
