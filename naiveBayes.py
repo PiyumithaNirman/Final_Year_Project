@@ -51,4 +51,4 @@ with open("pre1.csv") as csvfile:
     print (results)
     prediction = loaded_model.predict(results)
 print(prediction)
-pd.DataFrame(prediction).to_csv('prediction.csv')  # preds = knn.predict(sample)
+pd.DataFrame(prediction).to_csv('prediction.csv')
